@@ -1,0 +1,15 @@
+{% extends "../layout/base.html" %}
+
+{% block content %}
+<ul id="list_edit">
+{% for post in posts %}
+    <li>
+    <h1>{{ post["title"] }}</h1>
+    <div class="list_edit">
+	    <a class="btn" href="/admin/post/edit/{{ str(post['_id']) }}">修改</a>
+	    <a class="btn" href="javascript:void(0);" data-post_id="{{ str(post['_id']) }}" class="del_post">删除</a>
+    </div>
+    </li>
+{% end %}
+</ul>
+{% end %}

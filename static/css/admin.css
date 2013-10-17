@@ -1,0 +1,139 @@
+.error {
+	color: red;
+}
+
+.form-input {
+	overflow: hidden;
+	width: 600px;
+	margin: 10px 0;
+	clear: both;
+}
+.form-input label {
+	display: block;
+	width: 100px;
+	float: left;
+	text-align: right;
+}
+.form-input input {
+	display: block;
+	width: 492px;
+	float: right;
+}
+.tags {
+	/*clear:both;*/
+	/*margin: 20px;*/
+	/*height: auto;*/
+}
+.tag-group {
+	/*clear: both;*/
+	width: 498px;
+	/*margin: 20px;*/
+	margin: 0;
+	padding: 0;
+	margin-top: 30px;
+	margin-left: 100px;
+	/*border: 1px solid black;*/
+}
+.tag-group .tag {
+	/*float: left;*/
+	border: 0;
+	background-color: #eb893a;
+	color: #FFFFFF;
+	border-radius: 10px;
+	font-size: 16px;
+	line-height: 16px;
+	padding: 4px 6px;
+	margin: 4px 6px;
+	display: inline-block;
+}
+.tag-group .tag:hover {
+	-webkit-box-shadow:1px 1px 6px #000;
+	-moz-box-shadow:1px 1px 6px #000;
+	box-shadow:1px 1px 6px #000;
+}
+.ch_tag {
+	/*float: left;
+	margin-left: 30px;*/
+	border: 0;
+	background-color: #005CAF;
+	color: #FFFFFF;
+	border-radius: 10px;
+	font-size: 16px;
+	line-height: 16px;
+	padding: 4px 6px;
+	margin: 4px 6px;
+	display: inline-block;
+}
+.ch_tag:hover {
+	/*-webkit-box-shadow: none;*/
+	-webkit-box-shadow:1px 1px 6px #000;
+	-moz-box-shadow:1px 1px 6px #000;
+	box-shadow:1px 1px 6px #000;
+
+}
+.ch_tag a{
+	color: #15a660;
+	font-size: 14px;
+	/*font-weight: bold;*/
+	background-color: #005CAF;
+	color: #FFFFFF;
+	border-radius: 10px;
+	padding: 3px 5px 3px 5px;
+	text-align: center;
+	/*border: 1px solid black;*/
+	line-height: 14px;
+}
+/*.ch_tag a:hover {
+	background-color: #FFFFFF;
+	color: #005CAF;
+}*/
+.tag-clouds {
+	margin: 0;
+	padding: 0;
+	margin-top: 20px;
+	margin-left: 100px;
+	width: 500px;
+	/*border: 1px solid black;*/
+}
+textarea {
+	width: 496px;
+	padding: 2px;
+	border: 2px solid #005CAF;
+	/*height: 20px;*/
+	font-size: 16px;
+	line-height: 16px;
+	max-width: 492px;
+	min-width: 492px;
+}
+textarea:focus {
+	border: 2px solid #50a5f2;
+}
+#content {
+	float: right;
+}
+
+input[name="tag"] {
+	/*display: block;
+	float: left;
+	border: 0;
+	width: 20px;
+	padding: 0px;
+	margin-top: 20px;*/
+	display: none;
+}
+
+#post, #edit {
+	float: right;
+}
+
+.post_edit {
+	float: right;
+}
+.del_post {
+	float: right;
+}
+.post_edit a {
+	margin-left: 20px;
+	margin-top: 0px;
+	margin-bottom: 20px;
+}

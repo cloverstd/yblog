@@ -1,0 +1,41 @@
+{% extends "layout/base.html" %}
+{% block title %}Blog{% end %}
+{% block content %}
+{% for post in posts.items %}
+			<div class="post-icon"></div>
+			<ul class="post clearfix">
+				<li class="date">{{ dateformat(post["date"]) }}</li>
+				<li><h1 class="title"><a href="/article/{{ post['slug'] }}">{{ post["title"] }}</a></h1></li>
+				<li class="content">
+					{{ post["content_html"] }}
+				</li>
+				<li class="tags">
+					<ul>
+						{% for tag in post["tags"] %}
+						<li class="tag-index"><a title="Article with tag '{{ tag }}'." href="/tag/{{ tag }}">{{ tag }}</a></li>
+						{% end %}
+					</ul>
+				</li>
+				<li class="comment">
+					<a title="Publish a comment." href="/article/{{ post['slug'] }}#comment">comment</a>
+				</li>
+			</ul>
+			<hr class="division"/>
+{% end %}
+
+<div class="page-nav clearfix">
+<ul>
+    {% if posts.has_prev %}
+    <li class="prev"><a href="/page/{{ posts.prev_num }}">Prev</a></li>
+    {% else %}
+    {% end %}
+    {% if posts.has_next %}
+    <li class="next"><a href="/page/{{ posts.next_num }}">Next</a></li>
+    {% else %}
+    {% end %}
+<!--     <li class="prev"><a href="/page/{{ posts.prev_num }}"> Prev</a></li>
+    <li class="next"><a href="/page/{{ posts.next_num }}">Next </a></li>
+ --></ul>
+</div>
+
+{% end %}

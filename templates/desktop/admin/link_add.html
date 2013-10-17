@@ -1,0 +1,14 @@
+{% extends "../layout/base.html" %}
+
+{% block content %}
+<form action="" method="post" id="login-form">
+    <label for="name">名称</label>
+    <input type="text" name="name" />
+    <label for="name">链接</label>
+    <input type="url" name="url" />
+    <label for="name">描述</label>
+    <input type="text" name="description" />
+    {% module xsrf_form_html() %}
+    <button type="submit">添加</button>
+</form>
+{% end %}

@@ -1,0 +1,39 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+{% if month %}
+Archive: {{ month }} {{ year }}
+{% elif year %}
+Archive: {{ year }}
+{% else %}
+Archive
+{% end %}
+{% end %}
+
+{% block content %}
+{% set years = [] %}
+<!-- <ul class="archive">
+    {% for post in posts %}
+    <li>
+    <h1><a href="/article/{{ post['title'] }}">{{ post["title"] }}</a></h1>
+    </li>
+    {% end %}
+</ul> -->
+{% for post in posts %}
+	{% set current_year =  post['date'].year %}
+	{% if current_year not in years %}
+	<div class="year icon-time">
+		<a href="/archive/{{ current_year }}">{{ current_year }}</a>
+	</div>
+	<hr class="division">
+	{% set years.append(current_year) %}
+	{% end %}
+	<div class="post-icon"></div>
+	<div class="archive">
+		<time class="date">{{ dateformat(post['date']) }}</time>
+		<h1 class="title"><a href="/article/{{ post['slug'] }}">{{ post["title"] }}</a></h1>
+	</div>
+{% end %}
+
+
+{% end %}

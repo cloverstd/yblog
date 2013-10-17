@@ -1,0 +1,30 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Tag: {{ tag }}{% end %}
+
+{% block content %}
+<ul>
+    {% for post in posts.items %}
+    <div class="post-icon"></div>
+    <div class="archive">
+        <time class="date">{{ dateformat(post['date']) }}</time>
+        <h1 class="title"><a href="/article/{{ post['slug'] }}">{{ post["title"] }}</a></h1>
+    </div>
+    {% end %}
+</ul>
+
+<div class="page-nav clearfix">
+<ul>
+    {% if posts.has_prev %}
+    <li class="prev"><a href="/tag/{{ tag }}?p={{ posts.prev_num }}">Prev</a></li>
+    {% else %}
+    {% end %}
+    {% if posts.has_next %}
+    <li class="next"><a href="/tag/{{ tag }}?p={{ posts.next_num }}">Next</a></li>
+    {% else %}
+    {% end %}
+<!--     <li class="prev"><a href="/page/{{ posts.prev_num }}"> Prev</a></li>
+    <li class="next"><a href="/page/{{ posts.next_num }}">Next </a></li>
+ --></ul>
+</div>
+{% end %}

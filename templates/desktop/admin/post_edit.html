@@ -1,0 +1,43 @@
+{% extends "../layout/base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/admin.css">
+<script type="text/javascript" src="/static/js/base.js"></script>
+{% end %}
+
+{% block content %}
+<form action="/admin/post/edit/{{ str(post['_id']) }}" method="POST" id="edit-form">
+    <div class="form-input">
+        <label for="title">标题：</label>
+        <input type="text" id="title" name="title" value="{{ post['title'] }}"/>
+    </div>
+    <div  class="form-input">
+        <label for="slug">slug：</label>
+        <input type="text" id="slug" name="slug" value="{{ post['slug'] }}"/>
+    </div>
+    <div class="form-input clearfix">
+        <label for="tag">tags：</label>
+        <input type="text" id="tag" class="add_tag" />
+        <div class="tag-group">
+            {% for tag in post["tags"] %}
+            <a href="javascript:void(0);" class="tag">{{ tag }}</a>
+            <input type="text" name="tag" value="{{ tag }}" readonly />
+            {% end %}
+        </div>
+    </div>
+    <ul class="tag-clouds clearfix">
+        {% for tag in tags %}
+        <li class="ch_tag"><a href="javascript:void(0);">{{ tag }}</a></li>
+        {% end %}
+    </ul>
+    <div class="form-input">
+        <label for="content">内容：</label>
+        <textarea id="content" name="content" rows="30" cols="50">{{ post["content"] }}</textarea>
+    </div>
+    {% module xsrf_form_html() %}
+    <div class="clearfix">
+        <button type="submit" class="btn btn-default" id="edit">修改</button>
+        <a href="/article/{{ post['slug'] }}" class="btn">返回</a>
+    </div>
+</form>
+{% end %}
